@@ -11,6 +11,7 @@ namespace Calendar
     int COLUMN_WIDTH = 10;
     string[] daysOfWeek = { "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa" };
     private int month;
+    //multidimensional array to hold days of month in calendar order
     int[,] days = new int[6, 7];
     public Calendar(int month)
     {
@@ -31,7 +32,9 @@ namespace Calendar
 
     void PrintMonth()
     {
+      //create date to get month
       var date = new DateTime(DateTime.Now.Year, this.month, 1);
+      //print entered month and current year
       var toPrint = string.Format("{0," + (this.COLUMN_WIDTH * 3 + 2) + "}", date.ToString("MMMM, yyyy"));
       Console.WriteLine(toPrint);
       Console.WriteLine();
@@ -61,7 +64,7 @@ namespace Calendar
         if (dayOfWeek == DayOfWeek.Saturday)
           calendarRow++;
       }
-      //Print the orderd days of week
+      //Print days of month ordered by days of week
       for (int i = 0; i < days.GetLength(0); i++)
       {
         for (int j = 0; j < days.GetLength(1) ; j++)
