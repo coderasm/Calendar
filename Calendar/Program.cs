@@ -12,12 +12,12 @@ namespace Calendar
   {
     static void Main(string[] args)
     {
-      var monthsInYear = 12;
-      for (int i = 1; i <= monthsInYear; i++)
-      {
-        var calendar = new Calendar(i);
-        calendar.PrintCalendar();
-      }
+      //Print February
+      var calendarFebruary = new Calendar(2);
+      calendarFebruary.PrintCalendar();
+      //Print December
+      var calendarDecember = new Calendar(12);
+      calendarDecember.PrintCalendar();
       Console.ReadKey(); ;
     }
   }
